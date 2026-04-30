@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+dist/
+
+# Environment
+.env
+
+# IDE
+.vscode/settings.json
+.idea/
+
+# Reports (generated)
+reports/*.md
+reports/*.tex
+reports/*.pdf
+!reports/sample_report.tex
+
+# OS
+.DS_Store
+Thumbs.db
+
+# pytest
+.pytest_cache/

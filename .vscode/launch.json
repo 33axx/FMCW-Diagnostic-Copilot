@@ -1,0 +1,47 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Batch Demo (LLM)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "examples.batch_throughput_demo",
+            "cwd": "${workspaceFolder}",
+            "args": ["--hours", "0.1", "--llm"],
+            "env": {
+                "MIMO_API_KEY": "sk-在此填写你的MiMo密钥",
+                "DEEPSEEK_API_KEY": "sk-在此填写你的DeepSeek密钥"
+            },
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Batch Demo (Rule Engine)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "examples.batch_throughput_demo",
+            "cwd": "${workspaceFolder}",
+            "args": ["--hours", "0.05", "--no-llm"],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Biosignal Demo",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "examples.demo_biosignal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "MIMO_API_KEY": "sk-在此填写你的MiMo密钥"
+            },
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Run Tests",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "cwd": "${workspaceFolder}",
+            "args": ["tests/", "-v"],
+            "console": "integratedTerminal"
+        }
+    ]
+}

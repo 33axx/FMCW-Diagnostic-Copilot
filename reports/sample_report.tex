@@ -1,0 +1,64 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{hyperref}
+\geometry{margin=1in}
+
+\title{FMCW Radar Diagnostic Report — Sample}
+\author{FMCW Diagnostic Agent}
+\date{2026-04-30 11:30 UTC}
+
+\begin{document}
+\maketitle
+
+\section{Executive Summary}
+
+\textbf{Frame ID:} 42 \\
+\textbf{Sensor:} FMCW-RADAR-001 \\
+\textbf{Primary Diagnosis:} Biosignal Micro Doppler \\
+\textbf{Confidence:} 85\% \\
+\textbf{Requires Human Review:} No
+
+\bigskip
+\noindent Frame 42: 1 target(s), 2 range anomaly(s), 1 Doppler anomaly(s)
+
+\section{Physical Derivation}
+
+\subsection*{FMCW Range-Doppler Fundamentals}
+
+\textbf{Beat frequency → range:}
+\begin{equation}
+  R = \frac{c \, f_b}{2 \mu}, \quad \mu = \frac{B}{T_c}
+  \label{eq:range}
+\end{equation}
+
+\textbf{Phase sensitivity to displacement:}
+\begin{equation}
+  \Delta\phi = \frac{4\pi f_c \Delta R}{c}
+  \label{eq:phase}
+\end{equation}
+
+For $f_c = 79\ \mathrm{GHz}$, $\lambda \approx 3.8\ \mathrm{mm}$.
+A displacement of $1\ \mathrm{mm}$ yields $\Delta\phi \approx 92^\circ$.
+
+\subsection*{Micro-Doppler Biosignal Analysis}
+
+Respiration band: $0.1\text{--}0.5\ \mathrm{Hz}$, displacement $1\text{--}12\ \mathrm{mm}$.
+
+Heartbeat band: $0.8\text{--}3\ \mathrm{Hz}$, displacement $0.2\text{--}0.5\ \mathrm{mm}$.
+
+Amplitude coefficient of variation for stationarity test:
+\begin{equation}
+  CV = \frac{\sigma_A}{\mu_A}
+\end{equation}
+
+$CV > 0.25$ indicates biological (non-stationary) source.
+
+\section{Recommendation}
+
+If healthcare monitoring: log vital signs trend. Otherwise: verify no human/animal
+presence in sensor FOV.
+
+\end{document}
